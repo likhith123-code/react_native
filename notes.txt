@@ -1,0 +1,35 @@
+Scroll view is used when we know that the items will be limited.
+<ScrollView></ScrollView>
+
+Flatlist is used when we have large amounts of list. Flat list will automatically add the keys to the list items.
+The keys are added only when the data array is in particular array.
+The data array is array of strings then the key is not added. So store in form oj object with key as random
+and value as out data. So flat list can be easily added into the list items.
+<FlatList data={array} renderItem={itemData=>()} 
+Print the data itemData.item. If value is needed itemData.item.value (in case of object).
+
+GoalInput : 
+The entered Goal useState is managed in the goal input.
+To handle the addtoList method we create a prop in the custom component in the App.js and use it in the GoalInput.
+Also pass entered goal as a parameter in the Button in goalInput.js because in the App.js we add to the existing list.
+
+Deleting the Item : 
+We want to make list item as touchable one. So we use inbuilt touchable wrapper. We also have touchable opacity
+which has some more features like onPress, onLongPress, activeOpacity etc.
+Now wrap in goal item to get this work.
+Similarly we have touchable highlight and so on which have some different effects on touching the items.
+
+Ondelete Handler : 
+we use the filter method in js. It will keep the items which satisfy the given condition. If not satisfied it wont
+keep the item. The filter method return the new array after filtering all the things.
+
+Pass id as parameter to the delete function.
+
+Modal View :
+Model view has visible property. If it is false then the content inside it will not be visible. So we keep a Button
+on clicking that button we send a property value as true or false and manage that in the goalinput component.
+Model takes complete screen of device.
+On adding the item we need to remove the model. So in the button add handler make model visible as false.
+It re-renders everything so when we made the change the model will disappear so only the button and list appears
+text box and add button wont come.when model appears remaining will disappear.
+The Modal component is a basic way to present content above an enclosing view.
